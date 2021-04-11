@@ -1,5 +1,5 @@
 # dotfiles
-My config for Manjaro bspwm
+My config for Arch
 
 # Screenshots
 
