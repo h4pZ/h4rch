@@ -1,0 +1,198 @@
+﻿#
+# Window manipulation
+# ______________
+
+# Close window
+
+super + x
+	bspc  node -c
+
+super + Return
+    kitty
+	
+
+# Kill window
+super + shift + x
+	bspc  node -k
+
+# Toggle tiling mode of window
+#super + shift + t
+#	bspc node -t {pseudo_tiled,tiled}
+super + f
+	{bspc node -t floating && window-placer $(bspc query -T -d | grep -o '"state":"floating"' | wc -l),bspc node -t tiled}
+	
+# Toggle fullscreen
+super + shift + f 
+	bspc node -t {fullscreen,tiled}	
+
+
+# Make window sticky
+super + s
+	bspc node -g sticky
+
+# Lock a window from closing
+super + Escape
+	bspc node -g locked 
+
+### Map or unmap windows (functional equivalent of "minimize")
+super + c
+    whid dmenu
+
+super + shift + c
+    whid hide
+
+super + ctrl + c
+    whid last
+
+#
+# Window moving and splitting
+# ______________    
+
+# Autopresel (split window in its largest dimension)
+ctrl + space + super 
+	auto-presel
+	
+# Presel window for splitting in certain direction
+alt + super + {h,j,k,l}
+	bspc node -p \~{west,south,north,east}
+
+# Change keyboard layout
+ctrl + shift + {1, 2, 3}
+    setxkbmap -model pc105 -layout {us, es, se}; \
+    notify-send.py $(setxkbmap -query | grep layout) --replaces-process "keyboard_layout" --hint string:image-path:keyboard
+
+		
+
+# go (Shift=move) to desktop (and focus the monitor that the desktop is located on. Bspwm style)
+super + {_,shift + }{1-9,0}
+    bspc {desktop -f,node -d} ^{1-9,10}
+
+super  + {_, shift +}{q,w,e,r,t,y,u,i,o,p}
+    bspc {desktop -f,node -d} ^{11,12,13,14,15,16,17,18,19,20}
+	
+#Focus windows by direction, works with multihead
+super +  {h,j,k,l}
+    focusmover {west,south,north,east}
+        	
+# Move tiled windows. Moving a tiled window to 
+# preselected one moves into preselection instead. 
+# Moving out of the screen should move the window to next monitor if possible
+super + shift + {h,j,k,l}
+	windowgrabber {west,south,north,east}
+	
+# Different style of movement: transplant into window in chosen direction
+super + shift + {Left,Down,Up,Right}
+	euclid_mover {west,south,north,east}
+
+#resize windows
+super + ctrl + {a,s,w,d}
+	bspwm_resize.sh {west,south,north,east}
+
+super + ctrl + {h,j,k,l}
+	bspwm_resize.sh {west,south,north,east}
+	
+super + ctrl + {Left,Down,Up,Right}
+	bspwm_resize.sh {west,south,north,east}
+
+#
+# Layout manipulation/desktop level controls
+# ______________    
+
+	
+# Balance tree
+super + b
+	bspc node @/ -B
+
+# Balance brother node. If you do this on biggest window of the desktop, it usually means balancing all windows with except the biggest.
+super + alt + b
+	bspc node @brother -B
+	
+# Undo balancing (equalize windows)
+super + ctrl + b
+	bspc node @/ -E
+
+
+# Mirror and flip leaves of tree
+super + {comma,period}
+	bspc node @/ -F {horizontal,vertical}
+	
+# Rotate leaves of tree
+super + shift + {comma,period}
+	bspc node @/ -R {90,270}
+
+#
+# spawn programs
+#
+
+
+# Triggered by jus tapping super 
+super + shift + space
+	rofi -modi drun,run -show drun -display-drun "launch:" -show-icons
+
+super + m
+	rofi -modi drun,run -show drun -display-drun "launch:" -show-icons
+
+
+super + n
+	kill -s USR1 $(pidof deadd-notification-center)
+#	xdo show -N Polybar
+
+#super + shift + Return
+#	default-terminal
+
+super + {_,shift +}z
+    {kitty, bspc rule -a \* -o state=floating center=true rectangle=800x600+0+0 && kitty}
+	
+
+# Screenshot
+Print
+	flameshot gui
+	
+#
+# Media keys
+#
+
+XF86AudioRaiseVolume
+	vol.sh inc
+
+XF86AudioLowerVolume
+	vol.sh dec
+
+XF86AudioMute
+	vol.sh mute
+
+XF86AudioNext
+	playerctl next
+
+XF86AudioPlay
+	playerctl play-pause
+
+XF86AudioStop
+	playerctl stop
+
+XF86AudioPrev
+	playerctl previous
+
+
+	
+XF86MonBrightnessDown
+ light -U 5 
+
+XF86MonBrightnessUp
+ light -A 5
+ 
+
+XF86Sleep
+	systemctl suspend
+
+# make sxhkd reload its configuration files:
+super + shift + Escape
+	pkill -USR1 -x sxhkd
+
+# Lock session.
+super + shift + b
+	betterlockscreen -l dimblur -t "Locked"	
+
+# File explorer.
+super + v
+    nautilus
