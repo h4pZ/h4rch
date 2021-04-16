@@ -120,6 +120,7 @@ alias neofetch=" neofetch --backend kitty --source ~/Drive/h4pZ/pictures/mcp.jpg
 alias copy='xclip -sel clip'
 alias tock='tock -m -c -s -C=6'
 alias vim='nvim'
+alias nv='nvim'
 alias imshow='sxiv -a -b -t ./*'
 alias lg='lazygit'
 alias cpwd='pwd | copy'
@@ -143,7 +144,7 @@ export VISUAL=nvim
 export USE_VIDEOTHUMB=1
 
 # Other exports.
-export CUDA_DIR='/opt/cuda'                    # For JAX.
+export XLA_FLAGS='--xla_gpu_cuda_data_dir=/opt/cuda'  # For JAX.
 export TERM=xterm-kitty
 export PATH=$PATH:$HOME/.cargo/env             # For rust.
 export PATH=$PATH:$HOME/go/bin                 # For go.

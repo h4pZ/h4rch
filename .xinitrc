@@ -1,6 +1,7 @@
 #!/bin/sh
 # PATH
 export PATH=$PATH:$HOME/.local/bin
+export BROWSER=/usr/bin/firefox
 
 # Hotkeys.
 sxhkd &

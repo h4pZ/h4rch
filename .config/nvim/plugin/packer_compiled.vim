@@ -160,6 +160,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/h4pz/.local/share/nvim/site/pack/packer/start/vim-polyglot"
   },
+  ["vim-slime"] = {
+    loaded = true,
+    path = "/home/h4pz/.local/share/nvim/site/pack/packer/start/vim-slime"
+  },
   ["vim-vsnip"] = {
     loaded = true,
     path = "/home/h4pz/.local/share/nvim/site/pack/packer/start/vim-vsnip"

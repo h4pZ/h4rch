@@ -55,6 +55,9 @@ return require('packer').startup(function(use)
     use 'norcalli/nvim-colorizer.lua'
     use 'sheerun/vim-polyglot'
 
+    -- Comment
+    use 'terrortylor/nvim-comment'
+
     -- Telescope
     use 'nvim-lua/popup.nvim'
     use 'nvim-lua/plenary.nvim'
@@ -81,7 +84,10 @@ return require('packer').startup(function(use)
     -- Documentation Generator 
     use {'kkoomen/vim-doge', run = ':call doge#install()'}
 
+    -- Slime.
+    use 'jpalardy/vim-slime'
+
 	-- Discord
-	-- use 'andweeb/presence.nvim'
+    use 'andweeb/presence.nvim'
 
 end)
