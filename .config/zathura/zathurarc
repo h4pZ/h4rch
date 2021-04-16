@@ -1,0 +1,11 @@
+set recolor   
+set recolor-lightcolor \#171717
+set recolor-keephue
+set default-bg \#171717
+set inputbar-bg \#101010
+set inputbar-fg \#ffffff
+set tabbar-bg \#171717
+set tabbar-focus-bg \#000000
+set statusbar-bg \#101010
+set index-bg \#101010
+set index-active-bg \#ffffff
