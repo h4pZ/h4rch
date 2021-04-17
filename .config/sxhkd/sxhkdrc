@@ -100,8 +100,8 @@ super + ctrl + {Left,Down,Up,Right}
 
 	
 # Balance tree
-super + b
-	bspc node @/ -B
+#super + b
+#	bspc node @/ -B
 
 # Balance brother node. If you do this on biggest window of the desktop, it usually means balancing all windows with except the biggest.
 super + alt + b
@@ -132,13 +132,20 @@ super + shift + space
 super + m
 	rofi -modi drun,run -show drun -display-drun "launch:" -show-icons
 
+# monocle mode
+super + b
+    bspc desktop -l next
+
+# Cycle windows
+alt + {_, shift + }Tab
+    bspc node -f {next,prev}
 
 super + n
 	kill -s USR1 $(pidof deadd-notification-center)
 #	xdo show -N Polybar
 
-#super + shift + Return
-#	default-terminal
+super + shift + Return
+	default-terminal
 
 super + {_,shift +}z
     {kitty, bspc rule -a \* -o state=floating center=true rectangle=800x600+0+0 && kitty}
