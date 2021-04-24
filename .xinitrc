@@ -3,6 +3,14 @@
 export PATH=$PATH:$HOME/.local/bin
 export BROWSER=/usr/bin/firefox
 
+# For japanese.
+export GTK_IM_MODULE='fcitx'
+export QT_IM_MODULE='fcitx'
+export SDL_IM_MODULE='fcitx'
+export XMODIFIERS='@im=fcitx'
+
+fcitx5 -d &
+
 # Hotkeys.
 sxhkd &
 
@@ -24,8 +32,9 @@ deadd-notification-center &
 # Media keys.
 xbindkeys &
 
-# Start G-Drive
+# Start Drive
 insync start &
+nextcloud --background &
 
 # Polybar.
 $HOME/.config/polybar/launch.sh &

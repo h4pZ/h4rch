@@ -45,4 +45,3 @@ vim.cmd('source ~/.config/nvim/vimscript/functions.vim')
 -- The commands below doesn't work with the dashboard.
 --vim.cmd('highlight RedundantSpaces ctermbg=red guibg=#f29db4')
 --vim.cmd('match RedundantSpaces /\\s\\+$/')
-

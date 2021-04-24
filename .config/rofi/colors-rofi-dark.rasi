@@ -29,7 +29,7 @@
 }
 
 #window {
-    background-color: #171717CC;
+    background-color: #15161ACC;
     border: 0;
     padding: 2.5ch;
 	border-radius: 10px;

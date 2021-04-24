@@ -116,7 +116,7 @@ alias nvt='nvtop nvtop'
 alias dmen='dmenu_run -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15"'
 alias icat="kitty +kitten icat"
 alias emacs="emacs -nw"
-alias neofetch=" neofetch --backend kitty --source ~/Drive/h4pZ/pictures/mcp.jpg --package_managers off --gtk_shorthand off --gtk2 off --gtk3 off --uptime_shorthand tiny --size 270px --memory_display off"
+alias neofetch=" neofetch --backend kitty --source ~/M4in/pictures/mcp.jpg --package_managers off --gtk_shorthand off --gtk2 off --gtk3 off --uptime_shorthand tiny --size 270px --memory_display off"
 alias copy='xclip -sel clip'
 alias tock='tock -m -c -s -C=6'
 alias vim='nvim'
@@ -129,12 +129,13 @@ alias nnn="nnn -e -a"
 alias corona="curl https://corona-stats.online/"
 alias mpv="devour mpv"
 alias yt="ytfzf -t"
+alias kssh="kitty +kitten ssh"
 
 # EXPORT SECTION #
 
 # Setting up the nnn options.
-export NNN_BMS='w:~/Drive/h4pZ/pictures/wallbase;p:~/Drive/h4pZ/pictures;s:~/Drive/h4pZ/universities/master/semesters/;C:~/Drive/h4pZ/code/;b:~/Drive/h4pZ/books/;d:~/Drive/h4pZ/;c:~/.config/;o:/home/h4pz/Drive/h4pZ/personal/jobs/ocox-EB'
-export NNN_NOTE='~/Drive/h4pZ/notes.txt'
+export NNN_BMS='w:~/M4in/pictures/wallbase;p:~/M4in/pictures;s:~/M4in/universities/master/semesters/;C:~/M4in/code/;b:~/M4in/books/;d:~/M4in/;c:~/.config/;m:/media/'
+export NNN_NOTE='~/M4in/notes.txt'
 export NNN_USE_EDITOR=1
 export NNN_PLUG='s:sxiv;c:code;z:zathura;v:vlc;g:_lazygit;p:preview-tui'
 export NNN_COLORS='3627'
