@@ -8,7 +8,7 @@ super + x
 	bspc  node -c
 
 super + Return
-    kitty
+    GLFW_IM_MODULE=ibus kitty
 	
 
 # Kill window
@@ -148,7 +148,7 @@ super + shift + Return
 	default-terminal
 
 super + {_,shift +}z
-    {kitty, bspc rule -a \* -o state=floating center=true rectangle=800x600+0+0 && kitty}
+    {GLFW_IM_MODULE=ibus kitty, bspc rule -a \* -o state=floating center=true rectangle=800x600+0+0 && GLFW_IM_MODULE=ibus kitty}
 	
 
 # Screenshot

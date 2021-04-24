@@ -3,7 +3,6 @@ vim.cmd('set shortmess+=c') -- Don't pass messages to |ins-completion-menu|.
 vim.cmd('set inccommand=split') -- Make substitution work in realtime
 vim.cmd('set hidden')
 vim.o.title = true
--- vim.o.titlestring = "filename nvim"
 vim.o.titlestring="%<%F%=%l/%L - nvim"
 vim.cmd('set whichwrap+=<,>,[,],h,l') -- move to next line with theses keys
 vim.cmd('syntax on') -- move to next line with theses keys
@@ -36,3 +35,4 @@ vim.cmd('noremap <Leader>y "*y')
 vim.cmd('noremap <Leader>p "*p')
 vim.cmd('noremap <Leader>Y "+y')
 vim.cmd('noremap <Leader>P "+p')
+-- vim.o.titlestring = "filename nvim"
