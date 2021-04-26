@@ -208,7 +208,7 @@ n ()
 
 # Prompt.
 setopt prompt_subst
-PROMPT="%F{238}ハプス%f %B%{$fg[yellow]%}%(4~|%-1~/.../%2~|%~)%u%b %{$fg[yellow]%}>%B%{$reset_color%}%b "
+PROMPT="%F{238}$USER-Λ%f %B%{$fg[yellow]%}%(4~|%-1~/.../%2~|%~)%u%b %{$fg[yellow]%}>%B%{$reset_color%}%b "
 
 
 # FZF
