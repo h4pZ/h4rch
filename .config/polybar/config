@@ -20,7 +20,7 @@
 
 
 [colors]
-background = #00171717
+background = #00000000
 background-alt = #ffffff
 foreground = #ffffff
 foreground-alt = #eedccf
@@ -34,7 +34,7 @@ monitor = ${env:MONITOR:HDMI-0}
 width = 100%
 height = 30
 offset-x = 0%
-offset-y = 0.5%
+offset-y = 0%
 radius = 0
 fixed-center = true
 bottom = true
@@ -84,7 +84,7 @@ monitor = ${env:MONITOR:HDMI-1}
 width = 100%
 height = 30
 offset-x = 0%
-offset-y = 0.5%
+offset-y = 0%
 radius = 0
 fixed-center = true
 bottom = true
@@ -125,7 +125,7 @@ modules-center = bspwm
 modules-right =
 
 
-tray-position = right
+tray-position = 
 tray-transparent = false
 pseudo-transparency = false 
 tray-background = {$colors.background}
@@ -186,30 +186,29 @@ label-empty-foreground = #4dffffff
 label-empty-padding = 1
 
 ; Separator in between workspaces
-label-separator = 
+label-separator = ""
 
 
-ws-icon-0 = 1;ab
-ws-icon-1 = 2;cd
-ws-icon-2 = 3;fg
-ws-icon-3 = 4;hi
-ws-icon-4 = 5;jk
-ws-icon-5 = 6;az
-ws-icon-6 = 7;no
-ws-icon-7 = 8;pq
-ws-icon-8 = 9;rs
-ws-icon-9 = 10;tu
-ws-icon-10 = 11;ba
-ws-icon-11 = 12;cd
-ws-icon-12 = 13;gf
-ws-icon-13 = 14;ih
-ws-icon-14 = 15;kj
-ws-icon-15 = 16;za
-ws-icon-16 = 17;on
-ws-icon-17 = 18;qp
-ws-icon-18 = 19;rs
-ws-icon-19 = 20;ut
-
+ws-icon-0 = 1;qq
+ws-icon-1 = 2;ww
+ws-icon-2 = 3;ee
+ws-icon-3 = 4;rr
+ws-icon-4 = 5;tt
+ws-icon-5 = 6;yy
+ws-icon-6 = 7;uu
+ws-icon-7 = 8;ii
+ws-icon-8 = 9;oo
+ws-icon-9 = 10;pp
+ws-icon-10 = 11;qq
+ws-icon-11 = 12;ww
+ws-icon-12 = 13;ee
+ws-icon-13 = 14;rr
+ws-icon-14 = 15;tt
+ws-icon-15 = 16;yy
+ws-icon-16 = 17;uu
+ws-icon-17 = 18;ii
+ws-icon-18 = 19;oo
+ws-icon-19 = 20;pp
 
 [module/i3]
 type = internal/i3

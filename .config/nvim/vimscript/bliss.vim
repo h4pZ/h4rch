@@ -2,8 +2,8 @@
 let s:gui00        = "121213"
 let g:base16_gui00 = "121213"
 
-let s:gui01        = "15161a"
-let g:base16_gui01 = "15161a"
+let s:gui01        = "171717"
+let g:base16_gui01 = "171717"
 
 let s:gui02        = "5d5d5d"
 let g:base16_gui02 = "5d5d5d"
@@ -406,7 +406,7 @@ call <sid>hi("javaOperator",     s:gui0D, "", s:cterm0D, "", "", "")
 " Remove functions
 delf <sid>hi
 
-hi Normal guibg=#15161a
+hi Normal guibg=#171717
 
 " Remove color variables
 unlet s:gui00 s:gui01 s:gui02 s:gui03  s:gui04  s:gui05  s:gui06  s:gui07  s:gui08  s:gui09 s:gui0A  s:gui0B  s:gui0C  s:gui0D  s:gui0E  s:gui0F

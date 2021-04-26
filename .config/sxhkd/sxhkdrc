@@ -123,14 +123,9 @@ super + shift + {comma,period}
 #
 # spawn programs
 #
-
-
-# Triggered by jus tapping super 
-super + shift + space
-	rofi -modi drun,run -show drun -display-drun "launch:" -show-icons
-
 super + m
-	rofi -modi drun,run -show drun -display-drun "launch:" -show-icons
+    bash /home/h4pz/.config/rofi/launchers/text/launcher.sh
+
 
 # monocle mode
 super + b

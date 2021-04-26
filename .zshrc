@@ -116,7 +116,7 @@ alias nvt='nvtop nvtop'
 alias dmen='dmenu_run -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15"'
 alias icat="kitty +kitten icat"
 alias emacs="emacs -nw"
-alias neofetch=" neofetch --backend kitty --source ~/M4in/pictures/mcp.jpg --package_managers off --gtk_shorthand off --gtk2 off --gtk3 off --uptime_shorthand tiny --size 270px --memory_display off"
+alias neofetch=" neofetch --backend kitty --source ~/M4in/pictures/random/tumblr_njmosgnzkR1sge1tko1_1280.jpg --package_managers off --gtk_shorthand off --gtk2 off --gtk3 off --uptime_shorthand tiny --size 270px --memory_display off"
 alias copy='xclip -sel clip'
 alias tock='tock -m -c -s -C=6'
 alias vim='nvim'
@@ -208,7 +208,7 @@ n ()
 
 # Prompt.
 setopt prompt_subst
-PROMPT="%F{238}$USER-Λ%f %B%{$fg[yellow]%}%(4~|%-1~/.../%2~|%~)%u%b %{$fg[yellow]%}>%B%{$reset_color%}%b "
+PROMPT="%F{238}ハプス%f %B%{$fg[yellow]%}%(4~|%-1~/.../%2~|%~)%u%b %{$fg[yellow]%}>%B%{$reset_color%}%b "
 
 
 # FZF

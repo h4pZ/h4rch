@@ -1,16 +1,6 @@
+/** Basic config file **/
+
 configuration {
-	modi:"drun,window,run";
-    width: 25;
-    columns: 1;
-    font: "Source Code Pro Medium 11";
-    theme:"/home/h4pz/.config/rofi/colors-rofi-dark.rasi";
-    sidebar-mode: true;
-    tokenize: true;
-    m: "-5";
-    line-margin: 2;
-    line-padding: 1;
-    separator-style: "none";
-    hide-scrollbar: true;
-    window-format: "{w} {c}";
-    disable-history: false;
+  show-icons:         true;
+  icon-theme:         "Papirus";
 }
