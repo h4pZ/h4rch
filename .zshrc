@@ -130,6 +130,7 @@ alias corona="curl https://corona-stats.online/"
 alias mpv="devour mpv"
 alias yt="ytfzf -t"
 alias kssh="kitty +kitten ssh"
+alias sshr="ssh -f -N -T reverse"
 
 # EXPORT SECTION #
 
