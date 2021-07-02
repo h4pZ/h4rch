@@ -1,4 +1,4 @@
--- General mappings
+---- General mappings
 require('plugins')
 require('keymappings')
 require('settings')
