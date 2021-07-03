@@ -70,8 +70,8 @@ font-4 = "Noto Sans CJK TC:pixelsize=10:weight=bold;1"
 font-5 = "BABEL Unicode:pixelsize=10:weight=bold;1"
 font-6 = "Symbol:pixelsize=10;1"
 
-modules-left =
-modules-center = bspwm
+modules-left = 
+modules-center = bspwm 
 modules-right = 
 
 wm-restack = bspwm
@@ -252,7 +252,7 @@ type = custom/script
 interval = 1
 ;format-prefix = ""
 format = <label>
-exec = /home/h4pz/.config/polybar/polybar-scripts/spotify_status.py --font=1 -f '{play_pause} {song} - {artist}' -p '>,~' --playpause-font=1 --font=1
+exec = /home/h4pz/.config/polybar/polybar-scripts/spotify_status.py --font=2 -f '{play_pause} {song} - {artist}' -p '>,~' --playpause-font=2 --font=2
 format-underline = #1db954
 
 
@@ -359,7 +359,7 @@ format-prefix =
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #db2760
 
-label = %time% - %date%
+label = %{T2}%time% - %date%%{T-}
 
 [module/pulseaudio]
 type = internal/pulseaudio

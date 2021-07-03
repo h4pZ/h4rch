@@ -11,6 +11,7 @@ require('lsp')
 -- TODO: this doesn't work for some reason 
 require('nv-lspinstall')
 require('nv-lspkind')
+require('nv-lsp-signature')
 require('lsp.python-ls')
 require('lsp.sql-ls')
 
@@ -45,3 +46,7 @@ vim.cmd('source ~/.config/nvim/vimscript/functions.vim')
 -- The commands below doesn't work with the dashboard.
 --vim.cmd('highlight RedundantSpaces ctermbg=red guibg=#f29db4')
 --vim.cmd('match RedundantSpaces /\\s\\+$/')
+require('dap-python').setup('~/.virtualenvs/debugpy/bin/python')
+
+
+

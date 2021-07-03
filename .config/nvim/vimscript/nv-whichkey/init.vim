@@ -65,7 +65,7 @@ let g:which_key_map.b = {
 let g:which_key_map.d = {
       \ 'name' : '+debug' ,
       \ 'b' : ['DebugToggleBreakpoint '        , 'toggle breakpoint'],
-      \ 'c' : ['DebugContinue'                 , 'continue'],
+      \ 'c' : ['lua require("dap").continue()'                 , 'continue'],
       \ 'i' : ['DebugStepInto'                 , 'step into'],
       \ 'o' : ['DebugStepOver'                 , 'step over'],
       \ 'r' : ['DebugToggleRepl'               , 'toggle repl'],

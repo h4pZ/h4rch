@@ -25,9 +25,11 @@ return require('packer').startup(function(use)
     use 'glepnir/lspsaga.nvim'
     use 'onsails/lspkind-nvim'
     use 'kabouzeid/nvim-lspinstall'
+    use 'ray-x/lsp_signature.nvim'
 
     -- Debugging
     use 'mfussenegger/nvim-dap'
+    use 'mfussenegger/nvim-dap-python'
 
     -- Explorer
     use 'kyazdani42/nvim-tree.lua'
