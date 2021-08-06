@@ -28,8 +28,9 @@ return require('packer').startup(function(use)
     use 'ray-x/lsp_signature.nvim'
 
     -- Debugging
-    use 'mfussenegger/nvim-dap'
-    use 'mfussenegger/nvim-dap-python'
+    use { 'mfussenegger/nvim-dap' }
+    use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+    use "Pocco81/DAPInstall.nvim"
 
     -- Explorer
     use 'kyazdani42/nvim-tree.lua'
@@ -46,7 +47,7 @@ return require('packer').startup(function(use)
     -- Treesitter
     use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
     -- use 'p00f/nvim-ts-rainbow'
-    use {'lukas-reineke/indent-blankline.nvim', branch = 'lua'}
+    use {'lukas-reineke/indent-blankline.nvim' }
 
     -- Status Line and Bufferline
     use 'vim-airline/vim-airline'
@@ -76,6 +77,7 @@ return require('packer').startup(function(use)
 
     -- General plugins
     use 'liuchengxu/vim-which-key'
+    --use 'folke/which-key.nvim'
     use 'voldikss/vim-floaterm'
 
     -- Database
@@ -93,3 +95,4 @@ return require('packer').startup(function(use)
     use 'andweeb/presence.nvim'
 
 end)
+

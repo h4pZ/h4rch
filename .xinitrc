@@ -43,5 +43,9 @@ $HOME/.config/polybar/launch.sh &
 xset s off
 xset s off -dpms
 
+# Gnome keyring
+eval $(gnome-keyring-daemon --start)
+export SSH_AUTH_SOCK
+
 # Start the WM.
 bspwm

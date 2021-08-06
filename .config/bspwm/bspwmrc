@@ -83,6 +83,7 @@ bspc rule -a zoom state=floating center=true
 bspc rule -a Toolbox state=floating center=true
 bspc rule -a Insync state=floating center=true
 bspc rule -a Steam state=floating
+bspc rule -a protonvpn state=floating
 bspc rule -a Sxiv state=floating center=true 
 bspc rule -a vlc state=floating center=true rectangle=1280x720+0+0
 bspc rule -a Zathura state=floating center=true rectangle=1400x800+0+0

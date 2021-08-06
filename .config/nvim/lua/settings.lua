@@ -35,4 +35,5 @@ vim.cmd('noremap <Leader>y "*y')
 vim.cmd('noremap <Leader>p "*p')
 vim.cmd('noremap <Leader>Y "+y')
 vim.cmd('noremap <Leader>P "+p')
+
 -- vim.o.titlestring = "filename nvim"

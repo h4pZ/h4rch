@@ -17,6 +17,9 @@ require('lsp.sql-ls')
 
 -- Debug
 require('nv-nvim-dap')
+vim.fn.sign_define('DapBreakpoint', {text='ﴫ ', texthl='LspDiagnosticsSignError', linehl='', numhl=''})
+require('nv-dap-ui')
+
 
 -- Plugins
 require('nv-compe')
@@ -31,6 +34,7 @@ require('nv-gitsigns')
 require('nv-gitblame')
 require('nv-dashboard')
 require('nv-hop')
+--require('nv-which-key')
 vim.cmd('source ~/.config/nvim/vimscript/nv-whichkey/init.vim')
 require('nv-floaterm')
 require('nv-dadbod')
@@ -46,7 +50,5 @@ vim.cmd('source ~/.config/nvim/vimscript/functions.vim')
 -- The commands below doesn't work with the dashboard.
 --vim.cmd('highlight RedundantSpaces ctermbg=red guibg=#f29db4')
 --vim.cmd('match RedundantSpaces /\\s\\+$/')
-require('dap-python').setup('~/.virtualenvs/debugpy/bin/python')
-
-
+--require('dap-python').setup('~/.virtualenvs/debugpy/bin/python')
 
