@@ -125,7 +125,7 @@ modules-center = bspwm
 modules-right =
 
 
-tray-position = right
+tray-position = 
 tray-transparent = false
 pseudo-transparency = false 
 tray-background = {$colors.background}
