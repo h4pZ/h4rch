@@ -47,5 +47,8 @@ xset s off -dpms
 eval $(gnome-keyring-daemon --start)
 export SSH_AUTH_SOCK
 
+# Change mouse sensitivity.
+xinput --set-prop 13 "libinput Accel Speed" -1
+
 # Start the WM.
 bspwm
