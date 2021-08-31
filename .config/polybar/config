@@ -20,7 +20,7 @@
 
 
 [colors]
-background = #B315161a
+background = #80111217
 background-alt = #ffffff
 foreground = #ffffff
 foreground-alt = #eedccf
@@ -37,7 +37,7 @@ offset-x = 0%
 offset-y = 0%
 radius = 0
 fixed-center = true
-bottom = true
+bottom = false
 
 ;width = 20%
 ;height = 30
@@ -87,7 +87,7 @@ offset-x = 0%
 offset-y = 0%
 radius = 0
 fixed-center = true
-bottom = true
+bottom = false
 
 
 ;width = 20%

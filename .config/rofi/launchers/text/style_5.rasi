@@ -47,6 +47,7 @@ window {
     border-radius: 					0px;
     padding: 						300px;
     width: 							100%;
+    height:                         100%;
 }
 
 prompt {
@@ -185,3 +186,10 @@ textbox {
      size: 2ch;
  }
 
+
+/*
+* Make it work with rofi 1.7
+*/
+element-text, element-icon {
+    text-color:       inherit;
+}
