@@ -116,8 +116,8 @@ alias nvt='nvtop nvtop'
 alias dmen='dmenu_run -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15"'
 alias icat="kitty +kitten icat"
 alias emacs="emacs -nw"
-alias neofetch=" neofetch --backend kitty --source ~/M4in/pictures/random/tumblr_njmosgnzkR1sge1tko1_1280.jpg --package_managers off --gtk_shorthand off --gtk2 off --gtk3 off --uptime_shorthand tiny --size 270px --memory_display off"
-alias copy='xclip -sel clip'
+alias neofetch=" neofetch --backend kitty --source ~/Zp4h/pictures/random/tumblr_njmosgnzkR1sge1tko1_1280.jpg --package_managers off --gtk_shorthand off --gtk2 off --gtk3 off --uptime_shorthand tiny --size 270px --memory_display off"
+alias copy='wl-copy'
 alias tock='tock -m -c -s -C=6'
 alias vim='nvim'
 alias nv='nvim'
@@ -135,8 +135,8 @@ alias sshr="ssh -f -N -T reverse"
 # EXPORT SECTION #
 
 # Setting up the nnn options.
-export NNN_BMS='w:~/M4in/pictures/wallbase;p:~/M4in/pictures;s:~/M4in/universities/master/semesters/;C:~/M4in/code/;b:~/M4in/books/;d:~/M4in/;c:~/.config/;m:/media/'
-export NNN_NOTE='~/M4in/notes.txt'
+export NNN_BMS='w:~/Zp4h/pictures/wallbase;p:~/Zp4h/pictures;s:~/Zp4h/universities/master/semesters/;C:~/Zp4h/code/;b:~/Zp4h/books/;d:~/Zp4h/;c:~/.config/;m:/media/'
+export NNN_NOTE='~/Zp4h/notes.txt'
 export NNN_USE_EDITOR=1
 export NNN_PLUG='s:sxiv;c:code;z:zathura;v:vlc;g:_lazygit;p:preview-tui'
 export NNN_COLORS='3627'
@@ -161,23 +161,6 @@ export LESS_TERMCAP_se=$'\E[0m'
 export LESS_TERMCAP_so=$'\E[01;47;34m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;36m'
-
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/h4pz/mambaforge/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/h4pz/mambaforge/etc/profile.d/conda.sh" ]; then
-        . "/home/h4pz/mambaforge/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/h4pz/mambaforge/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-export LESS=-r
 
 n ()
 {
@@ -209,10 +192,34 @@ n ()
 
 # Prompt.
 setopt prompt_subst
-PROMPT="%F{238}$USER-Λ%f %B%{$fg[yellow]%}%(4~|%-1~/.../%2~|%~)%u%b %{$fg[yellow]%}>%B%{$reset_color%}%b "
+PROMPT="%F{238}$USER-Λ%f %B%{$fg[magenta]%}%(4~|%-1~/.../%2~|%~)%u%b %{$fg[magenta]%}>%B%{$reset_color%}%b "
 
 
 # FZF
 source /usr/share/fzf/completion.zsh
 source /usr/share/fzf/key-bindings.zsh
 export PATH=$HOME/.config/nvcode/utils/bin:$PATH
+
+# For mimikyu animation
+export PATH=$HOME/.local/bin:$PATH
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/h4pz/mambaforge/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/h4pz/mambaforge/etc/profile.d/conda.sh" ]; then
+        . "/home/h4pz/mambaforge/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/h4pz/mambaforge/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+
+if [ -f "/home/h4pz/mambaforge/etc/profile.d/mamba.sh" ]; then
+    . "/home/h4pz/mambaforge/etc/profile.d/mamba.sh"
+fi
+# <<< conda initialize <<<
+mamba deactivate

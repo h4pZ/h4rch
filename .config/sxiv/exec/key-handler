@@ -2,45 +2,50 @@
 while read file
 do
 
-	fullpath="$(pwd)/$file"
-	case "$1" in
-	"w")
-		cp "$file" ~/.config/wall &&
-		feh --bg-fill "$HOME/.config/wall" &
-		notify-send.py "Wallpaper changed" "$PWD/$file" --replaces-process "change_wallpaper" --hint string:image-path:file://$HOME/.config/wall;;
-	
-	"e")
-		cp "$file" ~/.config/wall &&
-		feh --bg-center "$HOME/.config/wall" &
-		notify-send.py "Wallpaper changed" "$PWD/$file" --replaces-process "change_wallpaper" --hint string:image-path:file://$HOME/.config/wall;;
-	
-	"r")
-		cp "$file" ~/.config/wall &&
-		feh --bg-max "$HOME/.config/wall" &
-		notify-send.py "Wallpaper changed" "$PWD/$file" --replaces-process "change_wallpaper" --hint string:image-path:file://$HOME/.config/wall;;
+  fullpath="$(pwd)/$file"
+  case "$1" in
+  "w")
+    cp "$file" ~/.config/wall &&
+    pkill swaybg;
+    swaybg -i ~/.config/wall &
+    notify-send "Wallpaper changed" -i "$PWD/$file";;
+  
+  "c")
+    cp "$file" ~/.config/wall &&
+    pkill swaybg;
+    swaybg -i ~/.config/wall -m center &
+    notify-send "Wallpaper changed" -i "$PWD/$file";;
+  
+  "s")
+    cp "$file" ~/.config/wall &&
+    pkill swaybg;
+    swaybg -i ~/.config/wall -m stretch &
+    notify-send "Wallpaper changed" -i "$PWD/$file";;
 
-	"t")
-		cp "$file" ~/.config/wall &&
-		feh --bg-scale "$HOME/.config/wall" &
-		notify-send.py "Wallpaper changed" "$PWD/$file" --replaces-process "change_wallpaper" --hint string:image-path:file://$HOME/.config/wall;;
+  "f")
+    cp "$file" ~/.config/wall &&
+    pkill swaybg;
+    swaybg -i ~/.config/wall -m fit &
+    notify-send "Wallpaper changed" -i "$PWD/$file";;
 
-	"y")
-		cp "$file" ~/.config/wall &&
-		feh --bg-tile "$HOME/.config/wall" &
-		notify-send.py "Wallpaper changed" "$PWD/$file" --replaces-process "change_wallpaper" --hint string:image-path:file://$HOME/.config/wall;;
+  "t")
+    cp "$file" ~/.config/wall &&
+    pkill swaybg;
+    swaybg -i ~/.config/wall -m tile &
+    notify-send "Wallpaper changed" -i "$PWD/$file";;
 
-	"C-n")
-		echo -n "$file" | xclip -selection clipboard &&
-		notify-send.py "Image copied to clipboard" "$PWD/$file" --replaces-process "copy_wallpaper" --hint string:image-path:file://$PWD/$file;;
+  "C-n")
+    echo -n "$file" | xclip -selection clipboard &&
+    notify-send.py "Image copied to clipboard" "$PWD/$file" --replaces-process "copy_wallpaper" --hint string:image-path:file://$PWD/$file;;
 
-	"C-c")
-		convert "$file" /tmp/tmp_sxiv_img.png &&
-		xclip -selection clipboard -target image/png /tmp/tmp_sxiv_img.png &&
-		notify-send.py "Image copied to clipboard" "$PWD/$file" --replaces-process "copy_wallpaper" --hint string:image-path:file://$PWD/$file;;
+  "C-c")
+    convert "$file" /tmp/tmp_sxiv_img.png &&
+    xclip -selection clipboard -target image/png /tmp/tmp_sxiv_img.png &&
+    notify-send.py "Image copied to clipboard" "$PWD/$file" --replaces-process "copy_wallpaper" --hint string:image-path:file://$PWD/$file;;
 
 
-	"C-d")
-		trash-put "$file" ;;
-	
-	esac
+  "C-d")
+    trash-put "$file" ;;
+  
+  esac
 done

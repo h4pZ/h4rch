@@ -106,3 +106,7 @@ URxvt.clipboard.autocopy: true
 
 URxvt*depth: 32
 URxvt*background: [70]#2d2d2d
+
+Sxiv.background: #0a0b10
+Sxiv.foreground: #C9CBFF
+Sxiv.font: BlexMono Nerd Font-9
