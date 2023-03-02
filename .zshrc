@@ -135,7 +135,7 @@ alias sshr="ssh -f -N -T reverse"
 # EXPORT SECTION #
 
 # Setting up the nnn options.
-export NNN_BMS='w:~/Zp4h/pictures/wallbase;p:~/Zp4h/pictures;s:~/Zp4h/universities/master/semesters/;C:~/Zp4h/code/;b:~/Zp4h/books/;d:~/Zp4h/;c:~/.config/;m:/media/'
+export NNN_BMS='w:~/Zp4h/pictures/wallbase;p:~/Zp4h/pictures;s:~/Zp4h/universities/master/semesters/;C:~/Zp4h/code/;b:~/Zp4h/books/;d:~/Zp4h/;c:~/.config/;m:/media/;r:~/repos/'
 export NNN_NOTE='~/Zp4h/notes.txt'
 export NNN_USE_EDITOR=1
 export NNN_PLUG='s:sxiv;c:code;z:zathura;v:vlc;g:_lazygit;p:preview-tui'
@@ -226,3 +226,6 @@ if [ -f "/home/h4pz/mambaforge/etc/profile.d/mamba.sh" ]; then
 fi
 # <<< conda initialize <<<
 mamba deactivate
+
+# For sxiv.
+xrdb -load ~/.Xresources
