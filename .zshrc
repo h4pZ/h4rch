@@ -105,7 +105,7 @@ source $ZSH/oh-my-zsh.sh
 alias cp='cp -i'                                                # Confirm before overwriting something
 alias df='df -h'                                                # Human-readable sizes
 alias free='free -m'                                            # Show sizes in MB
-#alias sxiv='sxiv -b -a'
+alias sxiv='sxiv -b -a'
 alias lsa="exa -lah"
 alias ls="exa"
 alias cat="bat"
@@ -116,7 +116,7 @@ alias nvt='nvtop nvtop'
 alias dmen='dmenu_run -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15"'
 alias icat="kitty +kitten icat"
 alias emacs="emacs -nw"
-alias neofetch=" neofetch --backend kitty --source ~/Zp4h/pictures/random/tumblr_njmosgnzkR1sge1tko1_1280.jpg --package_managers off --gtk_shorthand off --gtk2 off --gtk3 off --uptime_shorthand tiny --size 270px --memory_display off"
+alias neofetch=" neofetch --backend kitty --source ~/Zp4h/pictures/random/File_000.jpeg --package_managers off --gtk_shorthand off --gtk2 off --gtk3 off --uptime_shorthand tiny --size 300px"
 alias copy='wl-copy'
 alias tock='tock -m -c -s -C=6'
 alias vim='nvim'
@@ -161,6 +161,9 @@ export LESS_TERMCAP_se=$'\E[0m'
 export LESS_TERMCAP_so=$'\E[01;47;34m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;36m'
+
+# Wayland things.
+MOZ_ENABLE_WAYLAND=1
 
 n ()
 {

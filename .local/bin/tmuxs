@@ -1,0 +1,10 @@
+#!/bin/sh
+
+echo "Creating $1 tmux session"
+
+tmux new -s $1 -d
+tmux rename-window -t $1 nvim
+tmux new-window -n zsh
+tmux new-window -n git
+tmux new-window -n docker
+tmux select-window -t nvim
