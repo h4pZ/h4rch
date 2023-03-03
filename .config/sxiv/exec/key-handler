@@ -7,31 +7,31 @@ do
   "w")
     cp "$file" ~/.config/wall &&
     pkill swaybg;
-    swaybg -i ~/.config/wall &
+    nohup swaybg -i ~/.config/wall & >/dev/null 2>&1
     notify-send "Wallpaper changed" -i "$PWD/$file";;
   
   "c")
     cp "$file" ~/.config/wall &&
     pkill swaybg;
-    swaybg -i ~/.config/wall -m center &
+    nohup swaybg -i ~/.config/wall -m center & >/dev/null 2>&1
     notify-send "Wallpaper changed" -i "$PWD/$file";;
   
   "s")
     cp "$file" ~/.config/wall &&
     pkill swaybg;
-    swaybg -i ~/.config/wall -m stretch &
+    nohup swaybg -i ~/.config/wall -m stretch & >/dev/null 2>&1
     notify-send "Wallpaper changed" -i "$PWD/$file";;
 
   "f")
     cp "$file" ~/.config/wall &&
     pkill swaybg;
-    swaybg -i ~/.config/wall -m fit &
+    nohup swaybg -i ~/.config/wall -m fit & >/dev/null 2>&1
     notify-send "Wallpaper changed" -i "$PWD/$file";;
 
   "t")
     cp "$file" ~/.config/wall &&
     pkill swaybg;
-    swaybg -i ~/.config/wall -m tile &
+    nohup swaybg -i ~/.config/wall -m tile & >/dev/null 2>&1
     notify-send "Wallpaper changed" -i "$PWD/$file";;
 
   "C-n")
