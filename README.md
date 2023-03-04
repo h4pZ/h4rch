@@ -1,5 +1,5 @@
-# dotfiles
-My config for Arch
+# Hyprland - dotfiles
+My arch config files.
 
 # Screenshots
 
