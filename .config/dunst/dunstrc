@@ -4,34 +4,33 @@
 
     offset = 10x10
 
-    notification_height = 0
-
-    separator_height = 2
+    separator_height = 20
 
     padding = 8
     horizontal_padding = 8
     text_icon_padding = 0
-    frame_width = 2
+    frame_width = 1
 
-    frame_color = "#89B4FA"
+    frame_color = "#CDD6F400"
     separator_color = frame
+    background = "#0a0b10b3"
 
     sort = yes
     idle_threshold = 120
-    font = monospace 12
+    font = Source Code Pro 12
     line_height = 0
     markup = full
     alignment = left
     vertical_alignment = center
     show_age_threshold = 60
     word_wrap = yes
-    stack_duplicates = true
+    stack_duplicates = false
     hide_duplicate_count = false
 
     show_indicators = yes
 
     min_icon_size = 0
-    max_icon_size = 64
+    max_icon_size = 128
 
     icon_path = /usr/share/icons/Papirus-Dark/16x16/status/:/usr/share/icons/Papirus-Dark/16x16/devices/:/usr/share/icons/Papirus-Dark/16x16/actions/:/usr/share/icons/Papirus-Dark/16x16/animations/:/usr/share/icons/Papirus-Dark/16x16/apps/:/usr/share/icons/Papirus-Dark/16x16/categories/:/usr/share/icons/Papirus-Dark/16x16/emblems/:/usr/share/icons/Papirus-Dark/16x16/emotes/:/usr/share/icons/Papirus-Dark/16x16/devices/mimetypes:/usr/share/icons/Papirus-Dark/16x16/panel/:/usr/share/icons/Papirus-Dark/16x16/places/
 
@@ -44,15 +43,13 @@
     corner_radius = 10
     timeout = 5
 
+    layer=overlay
+
 [urgency_low]
-    background = "#1E1E2E"
     foreground = "#CDD6F4"
 
 [urgency_normal]
-    background = "#1E1E2E"
     foreground = "#CDD6F4"
 
 [urgency_critical]
-    background = "#1E1E2E"
-    foreground = "#CDD6F4"
-    frame_color = "#FAB387"
+    foreground = "#f70067"
