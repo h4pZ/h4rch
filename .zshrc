@@ -147,10 +147,11 @@ export USE_VIDEOTHUMB=1
 
 # Other exports.
 export XLA_FLAGS='--xla_gpu_cuda_data_dir=/opt/cuda'  # For JAX.
+export XLA_PYTHON_CLIENT_PREALLOCATE=false     # to avoid jax taking all my gpu :)
 export TERM=xterm-kitty
 export PATH=$PATH:$HOME/.cargo/env             # For rust.
 export PATH=$PATH:$HOME/go/bin                 # For go.
-export LD_LIBRARY_PATH=/usr/local/cuda/lib64   # For tensorflow.
+export LD_LIBRARY_PATH=/opt/cuda/lib64         # For tensorflow.
 export PYTHONPATH="/home/h4pz/Repos/"          # For kitty backend.
 
 # Color man pages
