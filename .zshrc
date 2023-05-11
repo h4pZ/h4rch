@@ -70,8 +70,7 @@ ZSH_THEME="arrow"
 # Add wisely, as too many plugins slow down shell startup.
 export LANG=en_US.utf8
 export LC_ALL=en_US.utf8
-plugins=(git)
-plugins=(zsh-autosuggestions)
+plugins=(git zsh-autosuggestions docker)
 
 source $ZSH/oh-my-zsh.sh
 
