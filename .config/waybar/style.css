@@ -2,13 +2,13 @@
     border: none;
     border-radius: 0;
     font-family: Nihon Rustica bold;
-    font-size: 18px;
+    font-size: 17px;
+    font-weight: bold;
     min-height: 0;
 }
 
 window#waybar {
     background: rgba(21, 18, 27, 0);
-    color: #cdd6f4;
 }
 
 tooltip {
@@ -21,7 +21,6 @@ tooltip {
 
 #workspaces button {
     border-radius: 0px;
-    padding-left: 10px;
     color: #D9E0EE;
 }
 
