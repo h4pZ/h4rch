@@ -1,9 +1,8 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: Nihon Rustica bold;
+    font-family: Nihon Rustica Medium;
     font-size: 17px;
-    font-weight: bold;
     min-height: 0;
 }
 
@@ -25,7 +24,7 @@ tooltip {
 }
 
 #workspaces button.active {
-    color: #f70067;
+    color: #3F4787;
 }
 
 #workspaces button.focused {
