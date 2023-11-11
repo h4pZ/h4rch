@@ -235,3 +235,4 @@ xrdb -load ~/.Xresources
 
 # For general theme.
 GTK_THEME=Adwaita:dark
+
