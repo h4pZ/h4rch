@@ -9,3 +9,4 @@ set tabbar-focus-bg \#000000
 set statusbar-bg \#101010
 set index-bg \#101010
 set index-active-bg \#ffffff
+set guioptions none

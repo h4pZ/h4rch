@@ -137,8 +137,10 @@ alias sshr="ssh -f -N -T reverse"
 export NNN_BMS='w:~/Zp4h/pictures/wallbase;p:~/Zp4h/pictures;s:~/Screenshots/;C:~/Zp4h/code/;b:~/Zp4h/books/;d:~/Zp4h/;c:~/.config/;m:/media/;r:~/repos/'
 export NNN_NOTE='~/Zp4h/notes.txt'
 export NNN_USE_EDITOR=1
-export NNN_PLUG='i:nsxiv;c:code;z:zathura;v:vlc'
+export NNN_PLUG='i:nsxiv;c:code;z:zathura;v:vlc;p:preview-tui'
 export NNN_COLORS='3627'
+export NNN_FIFO=/tmp/nnn.fifo
+export NNN_TERMINAL='kitty'
 export BAT_THEME='Monokai Extended Bright'
 export NNN_FCOLORS='0000daa100c67bbd000000d0'
 export VISUAL=nvim              
@@ -152,6 +154,7 @@ export PATH=$PATH:$HOME/.cargo/env             # For rust.
 export PATH=$PATH:$HOME/go/bin                 # For go.
 export LD_LIBRARY_PATH=/opt/cuda/lib64         # For tensorflow.
 export PYTHONPATH="/home/h4pz/Repos/"          # For kitty backend.
+export NOTUSER=""
 
 # Color man pages
 export LESS_TERMCAP_mb=$'\E[01;32m'
@@ -198,7 +201,7 @@ n ()
 
 # Prompt.
 setopt prompt_subst
-PROMPT="%F{black}$USER-Λ%f %B%{$fg[magenta]%}%(4~|%-1~/.../%2~|%~)%u%b %{$fg[magenta]%}>%B%{$reset_color%}%b "
+PROMPT="%F{black}$USER@$HOST%f %B%{$fg[magenta]%}%(4~|%-1~/.../%2~|%~)%u%b %{$fg[magenta]%}>%B%{$reset_color%}%b "
 
 
 # FZF
