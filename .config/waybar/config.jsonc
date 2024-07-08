@@ -6,6 +6,7 @@
     "passtrough": false,
     "gtk-layer-shell": true,
     "height": 10,
+    // "width": 10,
     // "modules-left": [
     //     // "clock"
     //     // "cpu",
@@ -14,6 +15,7 @@
     //     // "wlr/workspaces"
     // ],
     "modules-center": ["hyprland/workspaces"],
+    "modules-left": [],
     // "modules-right": [
     //     "tray"
     //     // "custom/updates",

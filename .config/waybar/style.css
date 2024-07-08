@@ -7,7 +7,7 @@
 }
 
 window#waybar {
-    background: rgba(33, 33, 33, 0.2);
+    background: rgba(33, 33, 33, 0.3);
 }
 
 tooltip {
@@ -20,6 +20,8 @@ tooltip {
 
 #workspaces button {
     border-radius: 0px;
+    margin: 2px;
+    padding-bottom: 5px;
     color: #D9E0EE;
 }
 
@@ -41,6 +43,7 @@ tooltip {
 
 #workspaces button:hover {
     color: #c9cbff;
+    background: rgba(25, 23, 36, 0.2);
     border-radius: 0px;
 }
 
@@ -58,7 +61,7 @@ tooltip {
 #backlight {
     background: #191724;
     background: rgba(25, 23, 36, 0.0);
-    padding: 5px;
+    padding: 0px;
     margin-bottom: 0px;
     margin-top: 0px;
     border: 0px solid #181825;
@@ -66,7 +69,7 @@ tooltip {
 
 #tray {
     border-radius: 3px;
-    margin-right: 10px;
+    margin-right: 15px;
     margin-left: 15px
 }
 
@@ -100,7 +103,7 @@ tooltip {
 #clock {
     color: #fab387;
     border-radius: 10px 0px 0px 10px;
-    margin-left: 5px;
+    margin-left: 0px;
     border-right: 0px;
 }
 
