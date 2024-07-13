@@ -7,4 +7,4 @@
 
 # nsxiv -b -a -t -q $(ls -1 | sort -z) >/dev/null 2>&1 &
 # $(find -L $(pwd) -maxdepth 1 -type f -print0 2>/dev/null | sort -z) | xargs -0 nsxiv -b -a -t -q "${count:--t}" --
-find -L "$(pwd)" -maxdepth 1 -type f -print0 2>/dev/null | sort -z | xargs -0 nsxiv -b -a -t -q --
+find -L "$(pwd)" -maxdepth 3 -type f -print0 2>/dev/null | sort -z | xargs -0 nsxiv -b -a -t -q --
