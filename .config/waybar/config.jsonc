@@ -1,12 +1,12 @@
 {
     "layer": "top",
-    "position": "left",
+    "position": "bottom",
     "mod": "dock",
     "exclusive": true,
     "passtrough": false,
     "gtk-layer-shell": true,
-    //"height": 10,
-     "width": 10,
+    "height": 10,
+    //"width": 10,
     // "modules-left": [
     //     // "clock"
     //     // "cpu",
