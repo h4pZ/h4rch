@@ -1,0 +1,16 @@
+font-family = BlexMono Nerd Font Mono
+font-style = Medium
+font-size = 11
+theme = rose-pine
+# background = 11111b
+link-url = true
+title = " "
+window-padding-x = 20
+window-padding-y = 20
+macos-titlebar-style = hidden
+gtk-titlebar = false
+copy-on-select = true
+confirm-close-surface = false
+
+custom-shader = ./mnoise.glsl
+custom-shader-animation = always

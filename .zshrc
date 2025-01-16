@@ -149,7 +149,7 @@ export USE_VIDEOTHUMB=1
 # Other exports.
 export XLA_FLAGS='--xla_gpu_cuda_data_dir=/opt/cuda'  # For JAX.
 export XLA_PYTHON_CLIENT_PREALLOCATE=false     # to avoid jax taking all my gpu :)
-export TERM=xterm-kitty
+export TERM=xterm-ghostty
 export PATH=$PATH:$HOME/.cargo/env             # For rust.
 export PATH=$PATH:$HOME/go/bin                 # For go.
 export LD_LIBRARY_PATH=/opt/cuda/lib64         # For tensorflow.
@@ -201,7 +201,7 @@ n ()
 
 # Prompt.
 setopt prompt_subst
-PROMPT="%F{black}$USER@$HOST%f %B%{$fg[magenta]%}%(4~|%-1~/.../%2~|%~)%u%b %{$fg[magenta]%}>%B%{$reset_color%}%b "
+PROMPT="%F{238}$USER@$HOST%f %B%{$fg[magenta]%}%(4~|%-1~/.../%2~|%~)%u%b %{$fg[magenta]%}>%B%{$reset_color%}%b "
 
 
 # FZF
