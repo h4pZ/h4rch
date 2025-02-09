@@ -104,10 +104,10 @@ source $ZSH/oh-my-zsh.sh
 alias cp='cp -i'                                                # Confirm before overwriting something
 alias df='df -h'                                                # Human-readable sizes
 alias free='free -m'                                            # Show sizes in MB
-alias sxiv='sxiv -b -a'
+alias sxiv='nsxiv -b -a'
 alias nsxiv='nsxiv -b -a'
-alias lsa="exa -lah"
-alias ls="exa"
+alias lsa="eza -lah"
+alias ls="eza"
 alias cat="bat"
 alias astmx="tmux a -t stats"
 alias amtmx="tmux a -t main"
@@ -121,13 +121,11 @@ alias copy='wl-copy'
 alias tock='tock -m -c -s -C=6'
 alias vim='nvim'
 alias nv='nvim'
-alias imshow='sxiv -a -b -t ./*'
+alias imshow='nsxiv -a -b -t ./*'
 alias lg='lazygit'
 alias cpwd='pwd | copy'
 alias screenkey='screenkey --scr 0 -s small -f "Office Code Pro" --opacity 0.5'
 alias nnn="nnn -e -a"
-alias corona="curl https://corona-stats.online/"
-alias yt="ytfzf -t"
 alias kssh="kitty +kitten ssh"
 alias sshr="ssh -f -N -T reverse"
 
