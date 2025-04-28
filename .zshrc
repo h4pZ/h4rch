@@ -135,10 +135,11 @@ alias sshr="ssh -f -N -T reverse"
 export NNN_BMS='w:~/Zp4h/pictures/wallbase;p:~/Zp4h/pictures;s:~/Screenshots/;C:~/Zp4h/code/;b:~/Zp4h/books/;d:~/Zp4h/;c:~/.config/;m:/media/;r:~/repos/'
 export NNN_NOTE='~/Zp4h/notes.txt'
 export NNN_USE_EDITOR=1
-export NNN_PLUG='i:nsxiv;c:code;z:zathura;v:vlc;p:preview-tui;f:nsxiv-folder'
+export NNN_PLUG='i:nsxiv;c:code;z:zathura;v:vlc;p:preview-tui;f:nsxiv-folder;g:preview-ghostty'
 export NNN_COLORS='3627'
 export NNN_FIFO=/tmp/nnn.fifo
 export NNN_TERMINAL='kitty'
+export NNN_PREVIEWIMGPROG='icat'
 export BAT_THEME='Monokai Extended Bright'
 export NNN_FCOLORS='0000daa100c67bbd000000d0'
 export VISUAL=nvim              
@@ -211,29 +212,25 @@ export PATH=$HOME/.config/nvcode/utils/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/h4pz/mambaforge/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/h4pz/mambaforge/etc/profile.d/conda.sh" ]; then
-        . "/home/h4pz/mambaforge/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/h4pz/mambaforge/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-
-if [ -f "/home/h4pz/mambaforge/etc/profile.d/mamba.sh" ]; then
-    . "/home/h4pz/mambaforge/etc/profile.d/mamba.sh"
-fi
-# <<< conda initialize <<<
-mamba deactivate
 
 # For sxiv.
 xrdb -load ~/.Xresources
 
 # For general theme.
 GTK_THEME=Adwaita:dark
+
+
+# >>> mamba initialize >>>
+# !! Contents within this block are managed by 'mamba shell init' !!
+export MAMBA_EXE='/home/h4pz/mambaforge/bin/mamba';
+export MAMBA_ROOT_PREFIX='/home/h4pz/mambaforge';
+__mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__mamba_setup"
+else
+    alias mamba="$MAMBA_EXE"  # Fallback on help from mamba activate
+fi
+unset __mamba_setup
+# <<< mamba initialize <<<
+mamba deactivate
 
