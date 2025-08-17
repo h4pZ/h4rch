@@ -15,3 +15,4 @@ confirm-close-surface = false
 
 custom-shader = ./mnoise.glsl
 custom-shader-animation = always
+keybind = shift+enter=text:\n

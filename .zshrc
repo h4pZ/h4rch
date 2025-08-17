@@ -132,7 +132,7 @@ alias sshr="ssh -f -N -T reverse"
 # EXPORT SECTION #
 
 # Setting up the nnn options.
-export NNN_BMS='w:~/Zp4h/pictures/wallbase;p:~/Zp4h/pictures;s:~/Screenshots/;C:~/Zp4h/code/;b:~/Zp4h/books/;d:~/Zp4h/;c:~/.config/;m:/media/;r:~/repos/'
+export NNN_BMS='w:~/Zp4h/pictures/wallbase;p:~/Zp4h/pictures;s:~/Screenshots/;b:~/Zp4h/books/;d:~/Zp4h/;c:~/.config/;m:/run/media/h4pz/b469092b-1ffd-4be8-824b-19df08ea83f4/;r:~/repos/'
 export NNN_NOTE='~/Zp4h/notes.txt'
 export NNN_USE_EDITOR=1
 export NNN_PLUG='i:nsxiv;c:code;z:zathura;v:vlc;p:preview-tui;f:nsxiv-folder;g:preview-ghostty'
@@ -202,7 +202,6 @@ n ()
 setopt prompt_subst
 PROMPT="%F{238}$USER@$HOST%f %B%{$fg[magenta]%}%(4~|%-1~/.../%2~|%~)%u%b %{$fg[magenta]%}>%B%{$reset_color%}%b "
 
-
 # FZF
 source /usr/share/fzf/completion.zsh
 source /usr/share/fzf/key-bindings.zsh
@@ -218,3 +217,11 @@ xrdb -load ~/.Xresources
 
 # For general theme.
 GTK_THEME=Adwaita:dark
+export PATH=~/.npm-global/bin:$PATH
+
+# bun completions
+[ -s "/home/h4pz/.bun/_bun" ] && source "/home/h4pz/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
