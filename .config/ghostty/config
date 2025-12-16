@@ -3,7 +3,8 @@ font-style = Medium
 font-size = 11
 theme = Rose Pine
 # background = 11111b
-# background-opacity = 0.2
+# background-opacity = 1.0
+# background-blur = true
 link-url = true
 title = " "
 window-padding-x = 20
@@ -18,3 +19,4 @@ custom-shader-animation = always
 keybind = shift+enter=text:\n
 
 alpha-blending = native
+gtk-single-instance = false
