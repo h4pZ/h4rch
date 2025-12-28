@@ -225,3 +225,6 @@ export PATH=~/.npm-global/bin:$PATH
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# opencode
+export PATH=/home/h4pz/.opencode/bin:$PATH
