@@ -1,5 +1,5 @@
 #!/bin/sh
-while read file
+tr '\0' '\n' | while read file
 do
 
   fullpath="$(pwd)/$file"
@@ -46,6 +46,12 @@ do
 
   "C-d")
     trash-put "$file" ;;
-  
+
+  "v")
+    video=$(echo "$file" | sed 's|\.gif$||; s|^/tmp/tmp\.[^/]*/|/|')
+    if [ -f "$video" ]; then
+      mpv "$video" &
+    fi
+    ;;
   esac
 done

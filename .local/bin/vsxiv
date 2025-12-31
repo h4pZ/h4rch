@@ -1,0 +1,82 @@
+#!/usr/bin/env sh
+set -e
+usage() {
+    >&2 echo "usage: nsxiv-thumb [FILE...] [NSXIV_FLAG...] [-- FILE...]"
+}
+[ "$1" = -h ] && { usage; exit; }
+[ -z "$OPENER" ] && OPENER="mpv"
+[ -z "$CACHEDIR" ] && CACHEDIR="${NSXIV_THUMB_CACHE_DIR:-"${XDG_CACHE_HOME:-"$HOME/.cache"}/nsxiv-extra/nsxiv-thumb"}"
+
+[ -z "$EXT" ] && EXT="gif"
+[ -z "$MAXPROCS" ] && MAXPROCS="${NSXIV_THUMB_MAX_PROCS:-"$(($(nproc) / 4))"}"
+[ -z "$SIZE" ] && SIZE=768
+[ -z "$NSXIV_EXEC" ] && NSXIV_EXEC="nsxiv"
+
+[ -z "$GIF_START" ] && GIF_START=15
+[ -z "$GIF_DURATION" ] && GIF_DURATION=3
+[ -z "$GIF_FPS" ] && GIF_FPS=30
+
+export CACHEDIR
+export EXT
+export SIZE
+export GIF_START
+export GIF_DURATION
+export GIF_FPS
+
+mkdir -p -- "$CACHEDIR"
+trap 'rm -rf -- "$tmpdir"' TERM INT EXIT HUP
+tmpdir="$(mktemp -d)" || {
+    printf "%s: %s\n" "${0##*/}" "could not create temporary directory"
+    exit 1
+}
+export tmpdir
+
+argcount=$#
+flags=''
+isflag=0
+onlyfiles=0
+for arg in "$@"; do
+    if [ "$onlyfiles" = 1 ]; then
+        set -- "$@" "$arg"
+        continue
+    fi
+    case "$arg" in
+        --) onlyfiles=1 ;;
+        -*) isflag=1; flags="$flags $arg" ;;
+        *) [ "$isflag" = 1 ] && flags="$flags $arg" || set -- "$@" "$arg" ;;
+    esac
+done
+shift $argcount
+
+find "$@" -mindepth 1 -maxdepth 1 \( -type f -o -type l \) -print0 \
+    | xargs -r0 -n 1 -P "$MAXPROCS" sh -c '
+        set -e
+        file="$1"
+        realpath="$(realpath -- "$file")"
+        case "$(file -b --mime-type -- "$realpath")" in
+            video/*) :;;
+            *) exit 0;;
+        esac
+        
+        hash="$({ stat --printf "%F%i%n%s%W%Y" -- "$realpath"; printf "%s" "$SIZE" "$EXT" "$GIF_START" "$GIF_DURATION" "$GIF_FPS"; } | sha512sum | cut -d" " -f1)"
+        thumbfl="$CACHEDIR/$hash.$EXT"
+        
+        # Generate animated GIF if not cached
+        [ -s "$thumbfl" ] || ffmpeg -ss "$GIF_START" -t "$GIF_DURATION" -i "$file" \
+            -vf "fps=$GIF_FPS,scale=$SIZE:-1:flags=lanczos" \
+            -loop 0 "$thumbfl" 2>/dev/null
+        
+        mkdir -p "$tmpdir/$(dirname -- "$realpath")"
+        cp -- "$thumbfl" "$tmpdir/$realpath.$EXT"
+    ' --
+
+OLD_IFS="$IFS"
+IFS='
+'
+set -- "$@" $(find "$tmpdir" -type d)
+IFS="$OLD_IFS"
+
+{ "$NSXIV_EXEC" -0otp $flags "$@"; rm -rf -- "${tmpdir:?}" > /dev/null; } \
+    | sed -z "s|\.$EXT$||;s|^${tmpdir}||" \
+    | sort -z \
+    | eval "xargs -r0 -I FILE $OPENER FILE"
