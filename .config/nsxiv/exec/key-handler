@@ -48,7 +48,7 @@ do
     trash-put "$file" ;;
 
   "v")
-    video=$(echo "$file" | sed 's|\.gif$||; s|^/tmp/tmp\.[^/]*/|/|')
+    video=$(echo "$file" | sed 's|\.png$||; s|^/tmp/tmp\.[^/]*/|/|')
     if [ -f "$video" ]; then
       mpv "$video" &
     fi
