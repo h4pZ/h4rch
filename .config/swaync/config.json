@@ -1,13 +1,13 @@
 {
   "$schema": "/etc/xdg/swaync/configSchema.json",
   "positionX": "right",
-  "positionY": "top",
+  "positionY": "center",
   "cssPriority": "user",
   "control-center-width": 380,
-  "control-center-height": 910,
+  "control-center-height": 1280,
   "control-center-margin-top": 2,
   "control-center-margin-bottom": 2,
-  "control-center-margin-right": 1,
+  "control-center-margin-right": 20,
   "control-center-margin-left": 0,
   "control-center-exclusive-zone": false,
   "notification-window-width": 400,
@@ -16,7 +16,7 @@
   "timeout": 4,
   "timeout-low": 2,
   "timeout-critical": 6,
-  "fit-to-screen": true,
+  "fit-to-screen": false,
   "keyboard-shortcuts": true,
   "image-visibility": "when-available",
   "transition-time": 200,
@@ -49,13 +49,13 @@
       "text": "Do not disturb"
     },
     "label#pkgupdates": {
-      "text": "󰣇  loading..."
+      "text": "󰣇  Updates: 9 pacman · 0 AUR"
     },
     "label#vpnstatus": {
-      "text": "󰒃  loading..."
+      "text": "󰒃  Connected · Sweden, Stockholm"
     },
     "label#nvda": {
-      "text": "󰻠 NVDA  loading..."
+      "text": "󰻠 NVDA  $223.13   ▲ +10.43%\n▁▁▂▁▃▄▃▃▁▁▁▁▃▃▄▅▅▆█▆▅▅▅  1mo"
     },
     "mpris": {
       "image-size": 94,
