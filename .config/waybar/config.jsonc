@@ -16,13 +16,7 @@
     // ],
     "modules-center": ["hyprland/workspaces"],
     "modules-left": [],
-    // "modules-right": [
-    //     "tray"
-    //     // "custom/updates",
-    //     // "custom/language",
-    //     // "pulseaudio",
-    //     // "pulseaudio#microphone"
-    // ],
+    "modules-right": [],
 
     "hyprland/window": {
         "format": "{}"
@@ -62,8 +56,8 @@
     //     "max-length": 10
     // },
     "custom/updates": {
-        "exec": "(yay -Qua) | wc -l",
-        "interval": 7200,
+        "exec": "(checkupdates; yay -Qua) | wc -l",
+        "interval": 3600,
         "format": " {}"
     },
     // "custom/language": {
@@ -85,7 +79,7 @@
         "spacing": 10
     },
     "clock": {
-        "format": "{: %R   %d/%m}",
+        "format": " {:%R    %d/%m}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
     "pulseaudio": {

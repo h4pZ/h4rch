@@ -7,7 +7,8 @@
 }
 
 window#waybar {
-    background: rgba(33, 33, 33, 0.3);
+    /* background: rgba(33, 33, 33, 0.3); */
+    background: transparent;
 }
 
 tooltip {
@@ -92,6 +93,7 @@ tooltip {
     border-left: 0px;
     border-right: 0px;
     border-radius: 10px 0px 0px 10px;;
+    font-family: "BlexMono Nerd Font Mono";
 }
 
 #window {
@@ -105,6 +107,7 @@ tooltip {
     border-radius: 10px 0px 0px 10px;
     margin-left: 0px;
     border-right: 0px;
+    font-family: "BlexMono Nerd Font Mono";
 }
 
 #network {

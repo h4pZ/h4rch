@@ -14,8 +14,8 @@ gtk-titlebar = false
 copy-on-select = true
 confirm-close-surface = false
 
-custom-shader = ./mnoise.glsl
-custom-shader-animation = always
+# custom-shader = ./mnoise.glsl
+# custom-shader-animation = always
 keybind = shift+enter=text:\n
 
 alpha-blending = native
