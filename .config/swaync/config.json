@@ -3,7 +3,6 @@
   "positionX": "right",
   "positionY": "top",
   "cssPriority": "user",
-
   "control-center-width": 380,
   "control-center-height": 910,
   "control-center-margin-top": 2,
@@ -11,15 +10,12 @@
   "control-center-margin-right": 1,
   "control-center-margin-left": 0,
   "control-center-exclusive-zone": false,
-
   "notification-window-width": 400,
   "notification-body-image-height": 160,
   "notification-body-image-width": 200,
-
   "timeout": 4,
   "timeout-low": 2,
   "timeout-critical": 6,
-
   "fit-to-screen": true,
   "keyboard-shortcuts": true,
   "image-visibility": "when-available",
@@ -35,7 +31,9 @@
     }
   },
   "widgets": [
-    "label",
+    "label#pkgupdates",
+    "label#vpnstatus",
+    "label#nvda",
     "mpris",
     "title",
     "notifications",
@@ -50,12 +48,17 @@
     "dnd": {
       "text": "Do not disturb"
     },
-    "label": {
-      "max-lines": 1,
-      "text": " "
+    "label#pkgupdates": {
+      "text": "󰣇  loading..."
+    },
+    "label#vpnstatus": {
+      "text": "󰒃  loading..."
+    },
+    "label#nvda": {
+      "text": "󰻠 NVDA  loading..."
     },
     "mpris": {
-      "image-size": 96,
+      "image-size": 94,
       "image-radius": 12
     },
     "volume": {
