@@ -13,6 +13,10 @@
   transition: 200ms;
 }
 
+.floating-notifications {
+  margin: 15px 15px 0px 0px;
+}
+
 .notification-row {
   outline: none;
   margin: 0;

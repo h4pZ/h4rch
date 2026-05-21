@@ -1,7 +1,9 @@
 {
   "$schema": "/etc/xdg/swaync/configSchema.json",
   "positionX": "right",
-  "positionY": "center",
+  "positionY": "top",
+  "control-center-positionX": "right",
+  "control-center-positionY": "center",
   "cssPriority": "user",
   "control-center-width": 380,
   "control-center-height": 1280,
@@ -52,10 +54,10 @@
       "text": "󰣇  Updates: 9 pacman · 0 AUR"
     },
     "label#vpnstatus": {
-      "text": "󰒃  Connected · Sweden, Stockholm"
+      "text": "󰒃  Connected · Sweden, Gothenburg"
     },
     "label#nvda": {
-      "text": "󰻠 NVDA  $223.13   ▲ +10.43%\n▁▁▂▁▃▄▃▃▁▁▁▁▃▃▄▅▅▆█▆▅▅▅  1mo"
+      "text": "󰻠 NVDA  $223.47   ▲ +10.60%\n▁▂▁▃▄▃▃▁▁▁▁▃▃▄▅▅▆█▆▅▅▅  1mo"
     },
     "mpris": {
       "image-size": 94,
