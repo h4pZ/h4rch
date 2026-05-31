@@ -229,3 +229,7 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # opencode
 export PATH=/home/h4pz/.opencode/bin:$PATH
 
+
+# peon-ping quick controls
+alias peon="bash /home/h4pz/.claude/hooks/peon-ping/peon.sh"
+[ -f /home/h4pz/.claude/hooks/peon-ping/completions.bash ] && source /home/h4pz/.claude/hooks/peon-ping/completions.bash
