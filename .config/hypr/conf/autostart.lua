@@ -1,0 +1,18 @@
+-- Autostart -- https://wiki.hypr.land/Configuring/Basics/Autostart/
+-- Run apps on the hyprland.start event. hl.exec_cmd spawns async, so no & disown needed.
+hl.on("hyprland.start", function()
+    hl.exec_cmd("systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
+    hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
+    hl.exec_cmd("autostart.sh")
+    hl.exec_cmd("wl-paste --type text --watch cliphist store")
+    hl.exec_cmd("wl-paste --type image --watch cliphist store")
+    hl.exec_cmd("udiskie")
+    hl.exec_cmd("swaybg -i ~/.config/wall")
+    hl.exec_cmd("swaync")
+    hl.exec_cmd("~/.config/swaync/daemon.sh")
+    hl.exec_cmd("/usr/lib/polkit-kde-authentication-agent-1")
+    hl.exec_cmd("waybar")
+    hl.exec_cmd("xrdb -load ~/.Xresources")
+    hl.exec_cmd("insync start --qt-qpa-platform=xcb")
+    hl.exec_cmd("hyprpm reload -n")
+end)
