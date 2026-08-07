@@ -11,7 +11,7 @@ hl.config({
     general = {
         gaps_in = 10,
         gaps_out = 20,
-        border_size = 2,
+        border_size = 3,
         -- ["col.active_border"] = { colors = { "rgba(F9588Fff)", "rgba(ff8585ff)", "rgba(8598ffff)" }, angle = 320 },
         ["col.active_border"] = { colors = { "rgba(5d40f0ff)", "rgba(ff8585ff)", "rgba(8598ffff)" }, angle = 320 },
         ["col.inactive_border"] = "rgba(595959aa)",
@@ -50,11 +50,14 @@ hl.config({
             new_optimizations = true,
         },
 
+        -- Must stay enabled: hyprglass needs the shadow decoration present in the
+        -- render pipeline (it auto-enables it at load, but a config reload would
+        -- flip it back off). Visual values are free to be whatever you like.
         shadow = {
-            enabled = false,
+            enabled = true,
             range = 10,
             render_power = 3,
-            color = "rgba(1a1a1aee)",
+            color = "rgba(00000000)", -- fully transparent: decoration present, nothing drawn
         },
     },
 })

@@ -16,8 +16,9 @@ hl.window_rule({ match = { class = "zoom" }, float = true })
 
 -- Layer rules
 -- legacy: blurls = notifications / waybar
-hl.layer_rule({ match = { namespace = "notifications" }, blur = true })
 -- hl.layer_rule({ match = { namespace = "waybar" }, blur = true })
+
+hl.layer_rule({ match = { namespace = "notifications" }, blur = true })
 
 -- legacy: layerrule = blur/ignore_alpha for swaync surfaces
 hl.layer_rule({ match = { namespace = "swaync-control-center" }, blur = true, ignore_alpha = 0.30 })

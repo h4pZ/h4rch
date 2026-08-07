@@ -10,7 +10,14 @@ hl.bind("SUPER + C", hl.dsp.window.close())                  -- legacy: killacti
 hl.bind("SUPER + E", hl.dsp.exec_cmd("nautilus", { float = true, size = { 800, 500 }, center = true }))
 hl.bind("SUPER + Q", hl.dsp.exec_cmd("firefox"))
 hl.bind("SUPER + B", hl.dsp.window.float({ action = "toggle" }))  -- legacy: togglefloating
-hl.bind("SUPER + F", hl.dsp.window.fullscreen())
+-- Maximize, not true fullscreen. Hyprland disables the whole decoration pass for
+-- FSMODE_FULLSCREEN (Renderer.cpp: `decorate && ... internal != FSMODE_FULLSCREEN`),
+-- which kills borders *and* the hyprglass decoration. FSMODE_MAXIMIZED keeps them,
+-- so the glass survives. client = -1 leaves the app's own fullscreen state alone.
+hl.bind("SUPER + F", hl.dsp.window.fullscreen_state({ internal = 1, client = -1 }))
+-- True fullscreen: app is told it is fullscreen (video, games). No decorations,
+-- so no border and no glass -- that is the tradeoff, not a bug.
+hl.bind("SUPER + SHIFT + F", hl.dsp.window.fullscreen())
 hl.bind("SUPER + R", hl.dsp.exec_cmd("killall rofi || ~/.config/rofi/launchers/type-3/launcher.sh"))
 hl.bind("SUPER + P", hl.dsp.window.pseudo())                 -- dwindle
 hl.bind("SUPER + T", hl.dsp.layout("togglesplit"))          -- dwindle (legacy: layoutmsg togglesplit)
@@ -18,6 +25,11 @@ hl.bind("SUPER + SHIFT + D", hl.dsp.exec_cmd("hyprlock --grace 3"))
 hl.bind("SUPER + CTRL + SHIFT + D", hl.dsp.exec_cmd("systemctl suspend && hyprlock"))
 hl.bind("SUPER + CTRL + SHIFT + S", hl.dsp.exec_cmd("systemctl suspend"))
 hl.bind("SUPER + N", hl.dsp.exec_cmd("~/.config/swaync/update.sh"))
+
+-- hyprtasking workspace overview (legacy: hyprtasking:toggle, all).
+-- Plugin dispatchers are exposed as plain functions under hl.plugin.<name>, not
+-- under hl.dsp, so this is bound as a closure rather than a dispatcher object.
+hl.bind("SUPER + O", function() hl.plugin.hyprtasking.toggle("all") end)
 
 -- Move focus with mainMod + hjkl
 hl.bind("SUPER + h", hl.dsp.focus({ direction = "l" }))
