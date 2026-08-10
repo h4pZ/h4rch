@@ -63,8 +63,8 @@ hg.preset("custom", {
 
         -- ── Edge / lens ────────────────────────────────────────────────────
         refraction_strength  = 8.0,        -- edge refraction. docs say 0.0-1.0, but `glass` ships 8.0
-        chromatic_aberration = 0.8,        -- 0.0-1.0, spectral fringing at edges. lower = less on text
-        edge_thickness       = 0.06,       -- 0.0-0.15, bezel width as fraction of smallest dimension
+        chromatic_aberration = 0.9,        -- 0.0-1.0, spectral fringing at edges. lower = less on text
+        edge_thickness       = 0.05,       -- 0.0-0.15, bezel width as fraction of smallest dimension
         lens_distortion      = 0.9,        -- 0.0-1.0, centre dome magnification
 
         -- ── Highlights ─────────────────────────────────────────────────────
