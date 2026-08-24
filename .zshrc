@@ -132,7 +132,7 @@ alias sshr="ssh -f -N -T reverse"
 # EXPORT SECTION #
 
 # Setting up the nnn options.
-export NNN_BMS='w:~/Zp4h/pictures/wallbase;p:~/Zp4h/pictures;s:~/Screenshots/;b:~/Zp4h/books/;d:~/Zp4h/;c:~/.config/;m:/run/media/h4pz/9b42fd28-97d2-4751-8d66-961768d1f371/;r:~/repos/'
+export NNN_BMS='w:~/Zp4h/pictures/wallbase;p:~/Zp4h/pictures;s:~/Screenshots/;b:~/Zp4h/books/;d:~/Zp4h/;c:~/.config/;m:/run/media/h4pz/9b42fd28-97d2-4751-8d66-961768d1f371/;r:~/repos/;W:~/.config/background_wall'
 export NNN_NOTE='~/Zp4h/notes.txt'
 export NNN_USE_EDITOR=1
 export NNN_PLUG='i:nsxiv;c:code;z:zathura;v:vlc;p:preview-tui;f:nsxiv-folder;g:preview-ghostty;I:vsxiv;A:asxiv'

@@ -51,13 +51,13 @@
       "text": "Do not disturb"
     },
     "label#pkgupdates": {
-      "text": "󰣇  Updates: 156 pacman · 0 AUR"
+      "text": "󰣇  Updates: 4 pacman · 0 AUR"
     },
     "label#vpnstatus": {
-      "text": "󰐜  Disconnected"
+      "text": "󰒃  Connected · Sweden, Malmö"
     },
     "label#nvda": {
-      "text": "󰻠 NVDA  $223.96   ▲ +13.73%\n▃▃▅▃▅▅▄▃▃▄▅▄▄▂▂▁▂▃▄▅▇▆█  1mo"
+      "text": "󰻠 NVDA  $209.41   ▲ +1.24%\n▄▂▂▁▁▃▄▅▆▆▇▆▆▇█▇▇▆▆▆▅▄  1mo"
     },
     "mpris": {
       "image-size": 94,

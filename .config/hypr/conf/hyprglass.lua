@@ -58,27 +58,27 @@ hg.preset("custom", {
 
     dark = {
         -- ── Frost ──────────────────────────────────────────────────────────
-        blur_strength        = 0.3,        -- blur radius scale (value * 12.0 px). 0.0 = no frost
+        blur_strength        = 0.0,        -- blur radius scale (value * 12.0 px). 0.0 = no frost
         blur_iterations      = 2,          -- int, gaussian passes, 1-5. higher = smoother + costlier
 
         -- ── Edge / lens ────────────────────────────────────────────────────
         refraction_strength  = 8.0,        -- edge refraction. docs say 0.0-1.0, but `glass` ships 8.0
-        chromatic_aberration = 0.9,        -- 0.0-1.0, spectral fringing at edges. lower = less on text
-        edge_thickness       = 0.05,       -- 0.0-0.15, bezel width as fraction of smallest dimension
-        lens_distortion      = 0.9,        -- 0.0-1.0, centre dome magnification
+        chromatic_aberration = 0.0,
+        edge_thickness       = 0.02,       -- 0.0-0.15, bezel width as fraction of smallest dimension
+        lens_distortion      = 0.0,        -- 0.0-1.0, centre dome magnification
 
         -- ── Highlights ─────────────────────────────────────────────────────
-        fresnel_strength     = 0.4,        -- 0.0-1.0, edge glow
-        specular_strength    = 0.8,        -- 0.0-1.0, top-biased highlight
+        fresnel_strength     = 0.0,        -- 0.0-1.0, edge glow
+        specular_strength    = 0.0,        -- 0.0-1.0, top-biased highlight
 
         -- ── Body ───────────────────────────────────────────────────────────
         glass_opacity        = 1.0,        -- 0.0-1.0, overall effect opacity
         tint_color           = 0xffffff00, -- RRGGBBAA. last two digits = tint strength (00 = untinted)
 
         -- ── Tone mapping (theme-specific; these are the dark defaults) ──────
-        brightness           = 0.62,       -- multiplier
+        brightness           = 1.00,       -- multiplier
         contrast             = 1.00,       -- around midpoint
-        saturation           = 1.40,       -- 0 = greyscale, 1 = full
+        saturation           = 1.00,       -- 0 = greyscale, 1 = full
         vibrancy             = 0.00,       -- selective saturation boost
         vibrancy_darkness    = 0.0,        -- 0-1, vibrancy influence on dark areas
         adaptive_dim         = 0.0,        -- 0-1, dims bright areas behind the glass
