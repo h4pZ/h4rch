@@ -76,22 +76,16 @@ hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"))
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"))
 
 -- Screenshots
-hl.bind("Print", hl.dsp.exec_cmd('grim -g "$(slurp -d -w 0)" - | wl-copy && notify-send "Screenshot captured"'))
-hl.bind("SUPER + Print", hl.dsp.exec_cmd('grim - | wl-copy && notify-send "Dekstop screenshot captured"'))
-hl.bind("SUPER + SHIFT + Print", hl.dsp.exec_cmd('grim -g "$(slurp)" ~/Screenshots/$(uuidgen).png && notify-send "Screenshot captured"'))
+hl.bind("Print", hl.dsp.exec_cmd([[f=$(mktemp /tmp/shot-XXXXXX.png); grim -g "$(slurp -d -w 0)" "$f" && wl-copy --type image/png < "$f" && notify-send "Screenshot captured" "<img src='$f'/>"; rm -f "$f"]]))
+hl.bind("SUPER + Print", hl.dsp.exec_cmd([[f=$(mktemp /tmp/shot-XXXXXX.png); grim "$f" && wl-copy --type image/png < "$f" && notify-send "Desktop screenshot copied" "<img src='$f'/>"; rm -f "$f"]]))
+hl.bind("SUPER + SHIFT + Print", hl.dsp.exec_cmd([[f=$HOME/Screenshots/$(uuidgen).png; grim -g "$(slurp)" "$f" && notify-send "Screenshot saved" "<img src='$f'/>"]]))
+hl.bind("SUPER + CTRL + Print", hl.dsp.exec_cmd([[f=$HOME/Screenshots/desktop-$(date +%Y-%m-%d_%H-%M-%S).png; grim "$f" && notify-send "Desktop screenshot saved" "<img src='$f'/>"]]))
 
 -- Color picker
 hl.bind("SUPER + SHIFT + P", hl.dsp.exec_cmd("hyprpicker -a -n"))
 
 -- Sticky / pin
 hl.bind("SUPER + S", hl.dsp.window.pin())
-
--- Overview toggle (Hyprspace plugin, KZDKM original). overview:toggle is a plugin
--- string dispatcher with no hl.dsp.* equivalent, so we use the lua-function form
--- hl.bind accepts and shell out via hyprctl.
-hl.bind("SUPER + O", function()
-    hl.exec_cmd("hyprctl dispatch overview:toggle")
-end)
 
 -- Groups
 hl.bind("SUPER + g", hl.dsp.group.toggle())
