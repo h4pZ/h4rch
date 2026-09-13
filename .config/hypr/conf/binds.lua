@@ -26,11 +26,6 @@ hl.bind("SUPER + CTRL + SHIFT + D", hl.dsp.exec_cmd("systemctl suspend && hyprlo
 hl.bind("SUPER + CTRL + SHIFT + S", hl.dsp.exec_cmd("systemctl suspend"))
 hl.bind("SUPER + N", hl.dsp.exec_cmd("~/.config/swaync/update.sh"))
 
--- hyprtasking workspace overview (legacy: hyprtasking:toggle, all).
--- Plugin dispatchers are exposed as plain functions under hl.plugin.<name>, not
--- under hl.dsp, so this is bound as a closure rather than a dispatcher object.
-hl.bind("SUPER + O", function() hl.plugin.hyprtasking.toggle("all") end)
-
 -- Move focus with mainMod + hjkl
 hl.bind("SUPER + h", hl.dsp.focus({ direction = "l" }))
 hl.bind("SUPER + l", hl.dsp.focus({ direction = "r" }))
@@ -74,6 +69,31 @@ hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true })
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"))
 hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"))
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"))
+
+-- Volume / mute (wpctl)
+-- int:value gives swaync a progress bar; x-canonical-private-synchronous makes
+-- repeated presses replace the popup instead of stacking one per keypress.
+local sink_notify = [[
+v=$(wpctl get-volume @DEFAULT_AUDIO_SINK@)
+p=$(echo "$v" | awk '{printf "%d", $2 * 100}')
+case "$v" in
+  *MUTED*) notify-send -a volume -u low -t 1500 \
+      -h string:x-canonical-private-synchronous:volume \
+      -i audio-volume-muted "Volume muted" ;;
+  *) notify-send -a volume -u low -t 1500 \
+      -h string:x-canonical-private-synchronous:volume \
+      -h int:value:"$p" \
+      -i audio-volume-high "Volume ${p}%" ;;
+esac]]
+
+local function vol(args)
+    return hl.dsp.exec_cmd("wpctl " .. args .. " || exit\n" .. sink_notify)
+end
+
+-- -l 1.0 caps at 100%; without it repeated steps hit software amplification and clip.
+hl.bind("SUPER + equal", vol("set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+"), { repeating = true })
+hl.bind("SUPER + minus", vol("set-volume @DEFAULT_AUDIO_SINK@ 5%-"), { repeating = true })
+hl.bind("SUPER + M", vol("set-mute @DEFAULT_AUDIO_SINK@ toggle"))
 
 -- Screenshots
 hl.bind("Print", hl.dsp.exec_cmd([[f=$(mktemp /tmp/shot-XXXXXX.png); grim -g "$(slurp -d -w 0)" "$f" && wl-copy --type image/png < "$f" && notify-send "Screenshot captured" "<img src='$f'/>"; rm -f "$f"]]))
