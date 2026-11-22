@@ -21,7 +21,7 @@ hg.config({
     -- +hyprglass_enabled tag below. Ghostty is the only client with a
     -- translucent background (ghostty cfg: background-opacity = 0.8), and it is
     -- the only place the glass has anything to show through.
-    enabled = false,
+    enabled = true,
     default_theme = "dark",
 
     -- Applies to every glassed window, which -- given `enabled = false` above --

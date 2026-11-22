@@ -111,7 +111,7 @@ hl.bind("SUPER + S", hl.dsp.window.pin())
 hl.bind("SUPER + g", hl.dsp.group.toggle())
 hl.bind("SUPER + tab", hl.dsp.group.next())                  -- legacy: changegroupactive
 hl.bind("SUPER + SHIFT + tab", hl.dsp.group.prev())          -- legacy: changegroupactive b
-hl.bind("SUPER + W", hl.dsp.group.lock_active({ action = "toggle" }))  -- legacy: lockactivegroup toggle
+hl.bind("SUPER + W", hl.dsp.group.lock({ action = "toggle" }))
 
 -- Move window or group (legacy: movewindoworgroup). group_aware moves the window in/out
 -- of groups along the given direction, which is the movewindoworgroup behavior.

@@ -110,6 +110,45 @@ vec2 calculatePatternUV(vec2 uv, float ratio, float time) {
                 + vec2(0.0, time * PATTERN_MOVEMENT_SPEED);
 }
 
+// void mainImage(out vec4 fragColor, in vec2 fragCoord) {
+//     // Calculate scaled UV coordinates
+//     vec2 scaleFactor = REFERENCE_RESOLUTION / iResolution.xy;
+//     vec2 uv = fragCoord / REFERENCE_RESOLUTION;
+//     float ratio = REFERENCE_RESOLUTION.y / REFERENCE_RESOLUTION.x;
+//
+//     // Get base texture color
+//     vec4 baseColor = texture(iChannel0, fragCoord / iResolution.xy);
+//
+//     // Calculate pattern coordinates
+//     float fw = max(fwidth(uv.x), fwidth(uv.y)) * length(scaleFactor);
+//     vec2 puv = calculatePatternUV(uv, ratio, iTime);
+//
+//     // Calculate pattern geometry
+//     uv = fract(vec2(uv.x, uv.y * ratio) * 10.0);
+//     float d1 = roundRectSDF((RECT_SCALE + 0.01) * (uv - 0.5), RECT_HALF_SIZE, 0.075);
+//     float d2 = roundRectSDF((RECT_SCALE + 0.065) * (fract(uv * 6.0) - 0.5), RECT_HALF_SIZE, 0.2);
+//
+//     // Calculate noise and color
+//     float noise = calculateLayeredNoise(puv, iTime * NOISE_TIME_SCALE);
+//
+//     vec3 fcol = mix(
+//         mix(
+//             mix(COLOR_DARK, COLOR_MID, smoothstep(0.0, 0.3, noise)),
+//             COLOR_DARK,
+//             smoothstep(0.0, 0.5, noise)
+//         ),
+//         COLOR_LIGHT,
+//         smoothstep(0.0, 1.0, noise)
+//     );
+//
+//     // Compose final color
+//     fragColor = vec4(
+//         baseColor.rgb + mix(COLOR_LIGHT, fcol, 
+//             smoothstep(fw, -fw, d1) * smoothstep(fw, -fw, d2)),
+//         baseColor.a
+//     );
+// }
+
 void mainImage(out vec4 fragColor, in vec2 fragCoord) {
     // Calculate scaled UV coordinates
     vec2 scaleFactor = REFERENCE_RESOLUTION / iResolution.xy;
@@ -141,10 +180,17 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
         smoothstep(0.0, 1.0, noise)
     );
     
-    // Compose final color
-    fragColor = vec4(
-        baseColor.rgb + mix(COLOR_LIGHT, fcol, 
-            smoothstep(fw, -fw, d1) * smoothstep(fw, -fw, d2)),
-        baseColor.a
-    );
+    // Calculate the background noise pattern color
+    vec3 patternColor = mix(COLOR_LIGHT, fcol, smoothstep(fw, -fw, d1) * smoothstep(fw, -fw, d2));
+    
+    // FIX: Ghostty 1.4 uses premultiplied text alpha. 
+    // We blend the noise background with the incoming text color, 
+    // ensuring subpixel text smoothing doesn't get corrupted.
+    vec3 finalRGB = baseColor.rgb + patternColor * (1.0 - baseColor.a);
+    
+    // Keep it locked to your config's 0.8 opacity value
+    float finalAlpha = max(baseColor.a, 0.8);
+    
+    fragColor = vec4(finalRGB, finalAlpha);
 }
+
